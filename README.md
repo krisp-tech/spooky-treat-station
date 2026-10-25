@@ -60,6 +60,8 @@ To start the show automatically when the PC boots, run **`Start with Windows - O
 
 ## Quick start (Linux)
 
+> 🐧 **Heads-up:** the Linux version hasn't been tested as much as the Windows one. It should work, but if something's off on your distro, well, you're a Linux user: you'll probably figure it out faster than we could explain it. Fixes and pull requests are very welcome.
+
 1. Download **`SpookyTreatStation-vX.Y.Z-linux-x64.tar.gz`** from the [Releases page](../../releases).
 2. Unpack it and run the one-time setup:
    ```bash
