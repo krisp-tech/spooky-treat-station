@@ -2,7 +2,7 @@
 
 **Length:** about 5 minutes · **Tone:** fast, fun, confident · **Promise:** download, plug in, scare everyone, in under an hour, with no coding and no cloud.
 
-> ✅ Both downloads exist: **Windows** (zip, 154 MB) and **Linux** (tar.gz, 165 MB). On Linux the one-time `install.sh` checks for Google Chrome and can install it, which adds about 2 minutes.
+> ✅ Both downloads exist: **Windows** (zip) and **Linux** (tar.gz), about 160 MB each. On Linux the one-time `install.sh` checks for Google Chrome and can install it, which adds about 2 minutes.
 
 ---
 
@@ -34,11 +34,11 @@
 ```
 💻 Windows 10/11 or Linux (64-bit PC)
 🧠 RAM: 4 GB minimum · 8 GB recommended   (uses about 1–2 GB while running)
-💾 Download: 154 MB (Linux 165 MB) · Disk: about 300 MB
+💾 Download: about 160 MB · Disk: about 300 MB
 📷 Any USB webcam   🖥 Any monitor/TV   🔊 Any speakers
 🌐 Internet: only to download. Runs 100% offline
 ```
-**VO:** It's a 154 MB download, takes about 300 MB on disk, and uses one to two gigabytes of memory. After the download it runs completely offline, and nothing is recorded or uploaded.
+**VO:** It's about a 160 MB download, takes about 300 MB on disk, and uses one to two gigabytes of memory. After the download it runs completely offline, and nothing is recorded or uploaded.
 
 ### 0:55 – 1:15 · THE 1-HOUR PLAN
 **VISUAL:** An animated timeline bar fills up as the VO lists the steps.
@@ -47,10 +47,10 @@
 
 ### 1:15 – 1:50 · STEP 1: DOWNLOAD & RUN (5 min)
 **VISUAL:** Screen recording: the GitHub page → **Releases** → click the Windows zip → the download bar → unzip to `C:\SpookyTreatStation`.
-**VO:** Go to the GitHub link in the description, click **Releases**, and download the Windows zip. Unzip it somewhere permanent, like `C:\SpookyTreatStation`. Then double-click **Setup Mode**.
+**VO:** Go to the GitHub link in the description, click **Releases**, and download the Windows zip. Quick tip: right-click it, **Properties**, tick **Unblock**. Then **Extract All** to a simple folder like `C:\SpookyTreatStation`. Open it and double-click **Setup Mode**.
 **VISUAL:** The SmartScreen popup. Highlight "More info" and then "Run anyway".
 **VO:** Windows will warn you because it's not from a big company. Click **More info**, then **Run anyway**. It's free and open source, so anyone can read the code.
-**ON SCREEN:** `GitHub → Releases → ⬇ .zip → unzip → Setup Mode.bat`
+**ON SCREEN:** `GitHub → Releases → ⬇ .zip → Properties ☑ Unblock → Extract All → Setup Mode.bat`
 **VISUAL (Linux, about 10 seconds):** a terminal showing `tar -xzf …`, then `./install.sh`, then "Install Google Chrome now? [y/N] y", then the "Spooky Treat Station Setup" icon appearing in the app menu.
 **VO:** On Linux it's just as easy. Unpack it and run `install.sh` once. If you don't have Chrome, it offers to install it for you, then puts the icons in your menu.
 **ON SCREEN:** `tar -xzf … → ./install.sh → Spooky Treat Station Setup`
@@ -72,6 +72,10 @@
 **VISUAL:** You walking up the driveway as the screen changes: the pumpkin invite, the "COME CLOSER" eyes, "ONE PER HEAD", then SCARE. Quick cuts.
 **VO:** Walk up your driveway and watch it go. When nobody's there, it invites people in. When someone steps in, it welcomes them. At the candy, it tells you: one per person. And when you reach in… *(scare sound)*.
 **ON SCREEN:** **INVITE → WELCOME → TAKE ONE → SCARE → BYE**
+
+**VISUAL (5 seconds):** Double-click the pumpkin icon `SpookyTreatStation.exe`; the screen goes straight to the full-screen show.
+**VO:** And on Halloween night? Just double-click the pumpkin. That's it.
+**ON SCREEN:** 🎃 **Halloween night: double-click SpookyTreatStation.exe**
 
 ### 3:45 – 4:10 · THE VOICES (it sets them up by itself)
 **VISUAL:** The Sound & voice tab: the "Preparing sentences 12 / 34" bar fills up. Click **🎲 Another voice** on the ghost and a new voice plays.
@@ -100,7 +104,7 @@
 > **What you need**
 > • Windows 10/11 or Linux (64-bit PC; an old Celeron is fine). Linux also needs Google Chrome, Chromium or Edge, and the installer can set up Chrome for you.
 > • RAM: 4 GB minimum, 8 GB recommended (uses about 1–2 GB while running)
-> • Download 154 MB (Linux: 165 MB) · about 300 MB on disk
+> • Download about 160 MB · about 300 MB on disk
 > • Any USB webcam (I use a Logitech C270), any monitor/TV, any speakers
 > • Internet only for the download. Runs fully offline, and nothing is recorded or uploaded.
 >

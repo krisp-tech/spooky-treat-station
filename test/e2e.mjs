@@ -28,7 +28,7 @@ const dataDir = mkdtempSync(path.join(tmpdir(), 'sts-'));
 
 const server = spawn(bin, ['-no-browser', '-port', String(port), '-data', dataDir], { stdio: expect ? 'ignore' : 'inherit' });
 let browser;
-const cleanup = async () => { try { await browser?.close(); } catch (e) { /* ignore */ } server.kill(); rmSync(dataDir, { recursive: true, force: true }); };
+const cleanup = async () => { try { await browser?.close(); } catch (e) { /* ignore */ } server.kill(); rmSync(dataDir, { recursive: true, force: true, maxRetries: 10, retryDelay: 200 }); };
 process.on('uncaughtException', async e => { console.error('FAIL e2e crashed:', e); await cleanup(); process.exit(2); });
 
 for (let i = 0; i < 50; i++) { try { await fetch(`http://127.0.0.1:${port}/api/info`); break; } catch (e) { await new Promise(r => setTimeout(r, 100)); } }

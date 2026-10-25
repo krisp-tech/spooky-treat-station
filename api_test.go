@@ -310,12 +310,12 @@ func TestMediaListEmptyFoldersAllPresent(t *testing.T) {
 // oddNames are file names users really produce (phones, downloads). The listed URL must decode back to the name.
 func oddNames() []string {
 	names := []string{
-		"plain.mp4", "with space.mp4", "hash#1.webm", "100% scary.mp4", "what?.jpg", "a&b+c=d.png", "semi;colon.gif",
+		"plain.mp4", "with space.mp4", "hash#1.webm", "100% scary.mp4", "a&b+c=d.png", "semi;colon.gif",
 		"ünïcødé ghost 🎃.mp4", "日本語.webm", "comma,(paren)[br]{cu}.mp3", "it's.wav", "tilde~excl!dollar$at@.ogg",
-		"UPPER.MP4", "multi.dots.name.m4a", "%41%2F.webp", "dots..in..middle.jpg", "-dash.jpeg", "trailing.mov ", "x.m4v", "y.ogv",
+		"UPPER.MP4", "multi.dots.name.m4a", "%41%2F.webp", "dots..in..middle.jpg", "-dash.jpeg", "x.m4v", "y.ogv",
 	}
-	if runtime.GOOS != "windows" {
-		names = append(names, `quote".mp4`, "less<more>.png", "pipe|star*.jpg")
+	if runtime.GOOS != "windows" { // Windows forbids these characters and silently drops a trailing space
+		names = append(names, `quote".mp4`, "less<more>.png", "pipe|star*.jpg", "what?.jpg", "trailing.mov ")
 	}
 	return names
 }

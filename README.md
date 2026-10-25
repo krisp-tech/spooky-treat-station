@@ -4,7 +4,9 @@ A Halloween display for your front door. You need a big screen, a webcam and spe
 
 It **invites** trick-or-treaters up the driveway, **welcomes** them, works out whether they're **kids or adults**, tells them to **take one treat**, and **scares them** when they reach in: a friendly cartoon "BOO!" for kids and a proper jump scare for adults.
 
-Everything runs **on your own PC**: no internet, no cloud, no account, and nothing is recorded. It runs fine on a cheap Intel Celeron with 8 GB RAM.
+Everything runs **on your own PC**: no internet, no cloud, no account, and nothing is recorded. It's made for a cheap PC, like an Intel Celeron with 8 GB RAM.
+
+### ⬇ [Download for Windows or Linux (free)](../../releases/latest) · then follow the [Quick start](#quick-start-windows)
 
 ![All built-in scenes: kids versions are cartoony and friendly, adult versions are dark and scary](docs/scenes.png)
 
@@ -36,7 +38,7 @@ Everything runs **on your own PC**: no internet, no cloud, no account, and nothi
 |---|---|
 | Computer | **Windows 10/11** or **Linux** (64-bit PC: Ubuntu, Mint, Debian, Fedora…). An Intel Celeron or better |
 | Memory | 4 GB minimum, 8 GB recommended (the show uses about 1–2 GB) |
-| Disk | 154 MB download (Linux: 165 MB), about 300 MB installed |
+| Disk | about 160 MB download, about 300 MB installed |
 | Camera | any USB webcam (720p is plenty) |
 | Screen | a monitor or TV, the bigger the better |
 | Sound | any speakers (louder is better outdoors) |
@@ -45,13 +47,15 @@ Everything runs **on your own PC**: no internet, no cloud, no account, and nothi
 
 ## Quick start (Windows)
 
-1. Download **`SpookyTreatStation-vX.Y.Z-windows.zip`** from the [Releases page](../../releases).
-2. Unzip it somewhere permanent, e.g. `C:\SpookyTreatStation`.
-3. Double-click **`Setup Mode.bat`**.
+1. Download **`SpookyTreatStation-vX.Y.Z-windows.zip`** from the [Releases page](../../releases/latest).
+2. **Right-click the zip → Properties → tick _Unblock_ → OK.** This stops Windows asking about every file inside.
+3. Right-click the zip → **Extract All…** to a simple folder like **`C:\SpookyTreatStation`**. Don't run it from inside the zip, and avoid `Program Files`, OneDrive or the Desktop (the program saves its settings next to itself).
+4. Open the folder and double-click **`Setup Mode.bat`**.
    > Windows may say *"Windows protected your PC"* because the program isn't signed by a company. Click **More info → Run anyway**.
-4. Follow the **Start here** tab: pick the camera, drag the zone lines, calibrate kids vs adults, and press **Save**.
-5. Press **Close**. The show starts right away, full screen, with no restart. Press **S** at any time for setup. Next time, just start **`SpookyTreatStation.exe`**.
+5. Follow the **Start here** tab: pick the camera, drag the zone lines, calibrate kids vs adults, and press **Save**.
+6. Press **Close**. The show starts right away. Press **S** at any time for setup.
 
+**On Halloween night:** double-click **`SpookyTreatStation.exe`** (the pumpkin icon). It opens straight into the full-screen show. To stop: press **Alt+F4**, then close the black window (or Setup → Advanced → Exit app).
 To start the show automatically when the PC boots, run **`Start with Windows - ON.bat`** and turn on Windows automatic sign-in.
 
 ## Quick start (Linux)
@@ -176,13 +180,26 @@ Drop `.mp4` / `.webm` videos, `.jpg` / `.png` / `.gif` pictures, or `.mp3` / `.w
 
 | Problem | Fix |
 |---|---|
-| No camera picture | Setup → Start here → choose the camera. Close other apps that use it (Teams, Zoom, Camera). |
+| No camera picture | Setup → Start here → choose the camera. Close other apps that use it (Teams, Zoom, Camera). Without a camera the show keeps running and the number keys 1–9 still play every scene. |
+| Windows won't start it at all ("Smart App Control blocked…") | On a freshly installed Windows 11, *Smart App Control* blocks every program that isn't signed by a company, with no "Run anyway" button. Either use another PC, or turn it off in Windows Security → App & browser control → Smart App Control (on some Windows versions it can't be turned back on without reinstalling). |
+| Antivirus quarantines a file | Unsigned free programs sometimes get a false alarm. Restore the file and allow the `SpookyTreatStation` folder, or build it yourself from this source. |
+| "Port … is used by another program" | It tries the next ports by itself (8765–8775). If all are busy, start it with `SpookyTreatStation.exe -port 9000`. |
 | No sound | Check the speakers and Setup → Sound & voice. If it says "Click to start", press any key once. |
 | Nobody detected | Add light. Lower *Detection confidence* (Advanced). Keep the GPU option off. |
 | Kids shown as adults (or the other way round) | Redo calibration and make sure head and feet are visible. Adjust *Kids are shorter than*. |
 | Scares too often / not at all | Move the red line or the jar box. Change *Jar sensitivity* and the cool-down in the Scare tab. |
 | Choppy animation | Setup → Advanced → *Drawing quality: Low*, and lower *Detections per second*. |
 | Voice sounds robotic | Setup → Sound & voice should say "Natural voices". If it says "not available", the `piper` or `voices` folder is missing next to the program. Right after a first start or a phrase change, wait a few minutes while the sentences are prepared. |
+
+## FAQ
+
+**Is it safe? Why does Windows warn me?** The program isn't signed with a paid company certificate, so Windows warns about it. It's open source: everything it does is in this repository, and you can build it yourself (below).
+
+**Does it record or upload anything?** No. Camera frames are analysed in memory and thrown away, and it needs no internet after the download.
+
+**Mac? Raspberry Pi?** Not packaged yet. On a Mac, `go run . -setup` with Chrome or Edge installed may work, but it's untested.
+
+**Can I use my own scares?** Yes. See [Your own videos and sounds](#your-own-videos-and-sounds).
 
 ## Build from source
 
@@ -199,12 +216,14 @@ go run . -setup
 go build -o SpookyTreatStation.exe .
 
 # release packages: Windows zip + Linux tar.gz (needs zip and curl; downloads Piper + voice once)
-scripts/build.sh 1.1.0            # or: scripts/build.sh 1.1.0 windows|linux
+scripts/build.sh 1.1.1            # or: scripts/build.sh 1.1.1 windows|linux
 ```
 
 The web app is plain JavaScript, so there's no build step: edit the files in `web/` and reload. `go build` embeds the `web/` folder into the executable.
 
 Command-line options: `-setup` (windowed, setup open), `-windowed`, `-no-browser`, `-port 8765`, `-browser <path>`, `-data <folder>`.
+
+`scripts/build.sh` and the full test suite are meant for **Linux or WSL** (they need bash, `zip`, `curl`, `sha256sum`, ffmpeg and Playwright). On Windows, `go test .` and `node --test test/unit/*.test.mjs` work as they are.
 
 ### Project layout
 

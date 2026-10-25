@@ -18,6 +18,10 @@
 # downloaded Piper + voices (scripts/fetch-voices.sh)
 /.cache/
 /voice-cache/
+/voices/
+/piper/
+*.zip
+*.tar.gz
 
 # release archives (uploaded to GitHub Releases, not committed)
 /release/

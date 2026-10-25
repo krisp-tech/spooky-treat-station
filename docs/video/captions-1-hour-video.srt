@@ -61,7 +61,7 @@ That's it.
 
 15
 00:00:41,138 --> 00:00:44,622
-It's a 154 MB download,
+It's about a 160 MB download,
 takes about 300 MB on
 
 16

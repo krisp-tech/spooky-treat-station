@@ -158,13 +158,27 @@ func main() {
 	mux.Handle("/media/", http.StripPrefix("/media/", noListing(http.FileServer(http.Dir(a.mediaDir)))))
 	mux.Handle("/", noCache(noListing(http.FileServer(http.FS(sub)))))
 
-	addr := fmt.Sprintf("127.0.0.1:%d", *port)
-	url := "http://" + addr + "/"
-	if *setup {
-		url += "?setup=1"
+	// The default port is tried first; if another program holds it, the next few are tried, so
+	// a busy port never stops the show. An explicit -port is used as given.
+	portChosen := false
+	flag.Visit(func(f *flag.Flag) { portChosen = portChosen || f.Name == "port" })
+	tries := 11
+	if portChosen {
+		tries = 1
 	}
-	ln, err := net.Listen("tcp", addr)
-	if err != nil {
+	var ln net.Listener
+	var addr, url string
+	for i := 0; i < tries; i++ {
+		addr = fmt.Sprintf("127.0.0.1:%d", *port+i)
+		url = "http://" + addr + "/"
+		if *setup {
+			url += "?setup=1"
+		}
+		var err error
+		if ln, err = net.Listen("tcp", addr); err == nil {
+			*port += i
+			break
+		}
 		// Already running? Then use that one instead of failing (and don't start a second show).
 		client := http.Client{Timeout: 2 * time.Second}
 		if ok, active := isOurServer(&client, "http://"+addr+"/api/info"); ok {
@@ -185,10 +199,13 @@ func main() {
 			time.Sleep(3 * time.Second)
 			return
 		}
-		fmt.Printf("\nCould not start on %s: %v\n", addr, err)
-		fmt.Println("Another program is using this port. Start with a different one, e.g.:  SpookyTreatStation.exe -port 8766")
-		waitForEnter()
-		os.Exit(1)
+		fmt.Printf("Port %d is used by another program.\n", *port+i)
+		if i == tries-1 {
+			fmt.Printf("\nCould not start on %s: %v\n", addr, err)
+			fmt.Printf("Another program is using this port. Start with a different one, e.g.:  SpookyTreatStation.exe -port %d\n", *port+tries)
+			waitForEnter()
+			os.Exit(1)
+		}
 	}
 	fmt.Println("App address :", url)
 

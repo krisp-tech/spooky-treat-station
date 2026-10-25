@@ -13,7 +13,10 @@ WHAT YOU NEED
   - Microsoft Edge (already on every Windows PC) or Google Chrome
 
 FIRST START
-  1. Unzip this folder somewhere permanent, e.g. C:\SpookyTreatStation
+  1. Before unzipping: right-click the downloaded zip -> Properties -> tick "Unblock" -> OK.
+     Then right-click it -> "Extract All..." to a simple folder, e.g. C:\SpookyTreatStation
+     (not inside the zip, not Program Files, OneDrive or the Desktop: settings are saved
+     next to the program).
   2. Double-click "Setup Mode.bat".
      (If Windows says "Windows protected your PC": click "More info" -> "Run anyway".
       The program is not signed by a company, which is why Windows asks.)
@@ -28,7 +31,9 @@ FIRST START
      while the show is running. Next time, just start SpookyTreatStation.exe.
 
 ON HALLOWEEN NIGHT
-  - Double-click SpookyTreatStation.exe. That's it.
+  - Double-click SpookyTreatStation.exe (the pumpkin icon). That's it: it opens full screen.
+    (Setup Mode.bat is for setting up; it opens a normal window.)
+  - To stop: Alt+F4, then close the black window (or Setup -> Advanced -> Exit app).
   - Want it to start by itself when the PC turns on? Run "Start with Windows - ON.bat".
 
 KEYBOARD (while the show is running)
@@ -72,6 +77,10 @@ TIPS FOR A HIDDEN, RELIABLE SETUP
 
 TROUBLESHOOTING
   No camera picture        -> Setup -> Start here -> pick the camera. Close other apps using it (Zoom/Teams/Camera).
+                              Without a camera the show still runs; keys 1-9 play every scene.
+  "Smart App Control blocked" -> fresh Windows 11 blocks unsigned programs with no "Run anyway".
+                              Turn it off in Windows Security -> App & browser control, or use another PC.
+  "Port is used"           -> it tries ports 8765-8775 by itself. Otherwise: SpookyTreatStation.exe -port 9000
   No sound                 -> check speaker volume and Setup -> Sound & voice. Press a key once if it says "Click to start".
   Voice sounds robotic     -> Setup -> Sound & voice: should say "Natural voices". The first start prepares
                               all sentences (a few minutes on a slow PC); until then a Windows voice is used.

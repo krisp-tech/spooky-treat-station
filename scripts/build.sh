@@ -5,7 +5,7 @@
 # Usage: scripts/build.sh [version] [windows|linux|all]     (needs Go 1.22+, zip, curl)
 set -euo pipefail
 cd "$(dirname "$0")/.."
-VERSION="${1:-1.0.0}"
+VERSION="${1:?usage: scripts/build.sh <version> [windows|linux|all]}"
 WHICH="${2:-all}"
 DIST="${DIST:-dist}"   # output folder (tests build into a temp folder)
 rm -rf "$DIST" && mkdir -p "$DIST"

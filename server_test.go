@@ -46,6 +46,9 @@ func stsBinary(t *testing.T) string {
 			return
 		}
 		binPath = filepath.Join(dir, "sts")
+		if runtime.GOOS == "windows" {
+			binPath += ".exe"
+		}
 		out, err := exec.Command(goTool, "build", "-o", binPath, ".").CombinedOutput()
 		if err != nil {
 			binErr = fmt.Errorf("go build: %v\n%s", err, out)
