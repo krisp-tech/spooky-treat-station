@@ -98,8 +98,8 @@
 
 > 🎃 Get an AI Halloween scare system running at your house in **under 1 hour**. Just download, copy and run. It watches your driveway with a webcam, tells **kids from adults**, and gives each the right show: a friendly cartoon BOO for kids, and a proper jump scare for adults. Runs **100% offline** on any old PC. Free & open source.
 >
-> ⬇ **Download (free):** https://github.com/YOUR-USERNAME/spooky-treat-station/releases
-> 📖 **Setup guide:** https://github.com/YOUR-USERNAME/spooky-treat-station#quick-start-windows
+> ⬇ **Download (free):** https://github.com/krisp-tech/spooky-treat-station/releases
+> 📖 **Setup guide:** https://github.com/krisp-tech/spooky-treat-station#quick-start-windows
 >
 > **What you need**
 > • Windows 10/11 or Linux (64-bit PC; an old Celeron is fine). Linux also needs Google Chrome, Chromium or Edge, and the installer can set up Chrome for you.

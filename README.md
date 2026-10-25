@@ -208,7 +208,7 @@ Drop `.mp4` / `.webm` videos, `.jpg` / `.png` / `.gif` pictures, or `.mp3` / `.w
 You need [Go 1.22+](https://go.dev/dl/).
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/spooky-treat-station.git
+git clone https://github.com/krisp-tech/spooky-treat-station.git
 cd spooky-treat-station
 
 # run it right away (any OS)
