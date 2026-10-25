@@ -1,0 +1,249 @@
+1
+00:00:00,000 --> 00:00:04,800
+[SCREAMING]
+
+2
+00:00:05,000 --> 00:00:08,000
+But when a kid walks up…
+
+3
+00:00:08,200 --> 00:00:11,500
+[GHOST] BOO! Hee hee, gotcha!
+…it knows the difference.
+
+4
+00:00:12,000 --> 00:00:16,000
+I built a Halloween screen that sees
+who's coming up my driveway,
+
+5
+00:00:16,000 --> 00:00:19,500
+figures out if they're a kid or an adult,
+and picks the right scare.
+
+6
+00:00:19,500 --> 00:00:22,500
+It runs on an old Celeron PC,
+it needs no internet,
+
+7
+00:00:22,500 --> 00:00:25,000
+and you can download it for free.
+Link's in the description.
+
+8
+00:00:25,500 --> 00:00:29,500
+Here's what trick-or-treaters see,
+from the moment they turn into the driveway.
+
+9
+00:00:45,000 --> 00:00:49,500
+When nobody's around,
+this pumpkin invites people in.
+
+10
+00:00:49,500 --> 00:00:52,000
+[PUMPKIN] Trick or treat! Come on up!
+
+11
+00:00:52,500 --> 00:00:56,500
+The second someone steps into the driveway,
+it switches to a welcome.
+
+12
+00:00:56,500 --> 00:01:00,000
+Kids get this cute little ghost.
+
+13
+00:01:00,000 --> 00:01:05,000
+Adults get glowing eyes in the dark,
+and a skull that whispers "come closer."
+
+14
+00:01:05,500 --> 00:01:09,000
+And watch the eyes.
+They follow you.
+
+15
+00:01:30,000 --> 00:01:34,500
+So how does it know if you're a kid?
+
+16
+00:01:34,500 --> 00:01:39,500
+A small AI model, running right on the PC,
+finds people in the camera picture.
+
+17
+00:01:39,500 --> 00:01:44,000
+Then it estimates your real height
+from where your feet are.
+
+18
+00:01:44,000 --> 00:01:47,000
+Under 1.40 metres, you're a kid.
+
+19
+00:01:47,000 --> 00:01:52,500
+Kids and adults together get the gentle version,
+so no little ones get traumatised.
+
+20
+00:02:10,000 --> 00:02:14,000
+When you get to the candy,
+it reminds you: one per person.
+
+21
+00:02:14,000 --> 00:02:17,500
+[SKULL] One treat per head…
+or I take yours.
+
+22
+00:02:17,500 --> 00:02:21,000
+And the moment you reach into the jar…
+
+23
+00:02:21,000 --> 00:02:24,000
+[SCREAMING]
+
+24
+00:02:24,500 --> 00:02:29,000
+For kids, it's a big friendly "BOO!"
+and a candy explosion.
+
+25
+00:02:29,000 --> 00:02:32,000
+For adults…
+well, you saw.
+
+26
+00:02:40,000 --> 00:03:30,000
+[REACTIONS AND LAUGHTER]
+
+27
+00:03:30,000 --> 00:03:35,000
+Want to build your own?
+You need four things,
+
+28
+00:03:35,000 --> 00:03:38,000
+and you probably have them already.
+
+29
+00:03:45,000 --> 00:03:50,000
+Any Windows PC (mine's a cheap Celeron),
+a USB webcam,
+
+30
+00:03:50,000 --> 00:03:54,000
+the biggest screen you've got,
+and speakers.
+
+31
+00:03:54,000 --> 00:03:58,000
+No cloud, no subscription,
+nothing recorded.
+
+32
+00:04:15,000 --> 00:04:20,000
+Go to the GitHub page (link in the description)
+and click Releases.
+
+33
+00:04:20,000 --> 00:04:25,000
+Download the Windows zip and unzip it
+somewhere permanent, like C:\SpookyTreatStation.
+
+34
+00:04:25,000 --> 00:04:30,000
+Windows will warn you because it's not
+signed by a big company.
+
+35
+00:04:30,000 --> 00:04:34,000
+Click "More info", then "Run anyway".
+
+36
+00:04:34,000 --> 00:04:38,000
+It's open source,
+so anyone can check the code.
+
+37
+00:05:00,000 --> 00:05:04,000
+Now double-click "Setup Mode"
+and pick your camera.
+
+38
+00:05:04,000 --> 00:05:09,000
+Drag the yellow line to where
+visitors start counting,
+
+39
+00:05:09,000 --> 00:05:14,000
+the orange line just before your candy,
+and the red line right in front of the screen.
+
+40
+00:05:14,000 --> 00:05:18,000
+Switch on "Watch the candy jar"
+and put the blue box over it.
+
+41
+00:05:18,000 --> 00:05:24,000
+Then have an adult stand far away,
+in the middle, and up close,
+
+42
+00:05:24,000 --> 00:05:27,000
+and press Capture each time.
+
+43
+00:05:27,000 --> 00:05:32,000
+That teaches it how tall people look
+at each distance.
+
+44
+00:05:32,000 --> 00:05:35,000
+Hit Save, and you're done.
+
+45
+00:05:50,000 --> 00:05:55,000
+You can choose how scary it gets:
+mild, medium, or maximum,
+
+46
+00:05:55,000 --> 00:05:59,000
+turn scares off for kids completely,
+
+47
+00:05:59,000 --> 00:06:04,000
+change everything the characters say,
+or drop in your own scary videos.
+
+48
+00:06:20,000 --> 00:06:25,000
+Tip: put the camera at about chest height,
+looking down the path.
+
+49
+00:06:25,000 --> 00:06:29,000
+Turn on a porch light
+so it can see at night.
+
+50
+00:06:29,000 --> 00:06:34,000
+And set it to start with Windows,
+so it's running when you get home.
+
+51
+00:06:40,000 --> 00:06:44,000
+The link's in the description.
+
+52
+00:06:44,000 --> 00:06:49,000
+If you build one, send me your reactions
+and I'll put the best in a follow-up.
+
+53
+00:06:49,000 --> 00:06:54,000
+Happy Halloween…
+if you dare.

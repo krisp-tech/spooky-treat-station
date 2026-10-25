@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spooky Treat Station</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="stage"></canvas>
+  <div id="media"></div>
+  <div id="subtitle"></div>
+  <canvas id="pip" width="320" height="240"></canvas>
+  <div id="toast"></div>
+  <div id="preview-badge">PREVIEW — visitors are ignored. Press 0 for automatic.</div>
+
+  <div id="loading">
+    <div class="pumpkin">🎃</div>
+    <div class="title">Spooky Treat Station</div>
+    <div id="loading-text">Waking up the ghosts...</div>
+  </div>
+
+  <div id="click-to-start">
+    <div>🔊 Click anywhere to start the show</div>
+    <small>The browser blocked sound until someone clicks. Starting with the launcher (SpookyTreatStation.exe) avoids this.</small>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

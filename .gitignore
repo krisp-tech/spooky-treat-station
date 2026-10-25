@@ -1,0 +1,23 @@
+# build output
+/dist/
+*.exe
+
+# created at runtime next to the program
+/settings.json
+/settings.json.tmp
+/media/
+/browser-profile/
+
+# test output / large generated test video
+/test/out/
+/test/gallery/
+/test/*.y4m
+/test/*.png
+/test/pose.jpg
+
+# downloaded Piper + voices (scripts/fetch-voices.sh)
+/.cache/
+/voice-cache/
+
+# release archives (uploaded to GitHub Releases, not committed)
+/release/
