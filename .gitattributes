@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+*.onnx binary
+*.wasm binary
+*.tflite binary
+*.task binary
+*.syso binary
+*.woff2 binary
+*.png binary
+*.mp3 binary
