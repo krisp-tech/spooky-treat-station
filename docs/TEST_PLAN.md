@@ -110,7 +110,7 @@ Auto = automated (Y) or manual (N). Files are relative to the project root.
 | CAM-05 | allowCamera | Preferences = `[]`, `null`, `"x"`, empty, truncated, `{"profile":null}`, wrong types | never panics; non-objects left untouched with an error; objects repaired | Y | browser_extra_test.go |
 | CAM-06 | allowCamera | Preferences is a directory | error | Y | browser_extra_test.go |
 | BR-01 | openBrowser | kiosk with a Chrome path (fake script records args) | `--kiosk`, profile dir, autoplay, throttling flags; no Edge-only flag; URL last; camera pre-allowed | Y | browser_extra_test.go |
-| BR-02 | openBrowser | kiosk with an Edge path | `--edge-kiosk-type=fullscreen` | Y | browser_extra_test.go |
+| BR-02 | openBrowser | kiosk with an Edge path | plain `--kiosk`, no `--edge-kiosk-type=fullscreen` (InPrivate ignores the pre-allowed camera) | Y | browser_extra_test.go |
 | BR-03 | openBrowser | windowed / setup | `--app=<url>`, window size, no `--kiosk` | Y | browser_extra_test.go |
 | BR-04 | openBrowser | missing executable | error returned | Y | browser_extra_test.go |
 | BR-05 | findBrowser | Edge and Chrome both on PATH (Linux branch) | Edge preferred, isEdge = true | Y | browser_extra_test.go |

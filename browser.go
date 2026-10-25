@@ -111,9 +111,9 @@ func browserMissingHelp() string {
 // openBrowser starts Edge/Chrome with a dedicated profile so our kiosk flags always apply
 // (flags are ignored if the browser is already running with the same profile).
 func openBrowser(custom, url, profileDir string, kiosk bool) error {
-	path, isEdge := custom, strings.Contains(strings.ToLower(custom), "edge")
+	path := custom
 	if path == "" {
-		path, isEdge = findBrowser()
+		path, _ = findBrowser()
 	}
 	if path == "" {
 		return errors.New(browserMissingHelp())
@@ -142,11 +142,9 @@ func openBrowser(custom, url, profileDir string, kiosk bool) error {
 		"--disable-backgrounding-occluded-windows",
 	}
 	if kiosk {
-		args = append(args, "--kiosk")
-		if isEdge {
-			args = append(args, "--edge-kiosk-type=fullscreen")
-		}
-		args = append(args, url)
+		// Plain --kiosk on Edge too: Edge's own "--edge-kiosk-type=fullscreen" always browses InPrivate,
+		// which ignores the camera "Allow" above and shows a camera prompt on the kiosk screen.
+		args = append(args, "--kiosk", url)
 	} else {
 		args = append(args, "--new-window", "--app="+url, "--window-size=1400,900")
 	}

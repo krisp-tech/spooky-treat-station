@@ -222,7 +222,7 @@ func TestOpenBrowserKioskArgsChrome(t *testing.T) {
 		}
 	}
 	if has(args, "--edge-kiosk-type=fullscreen") {
-		t.Error("edge-only flag passed to chrome")
+		t.Error("InPrivate Edge kiosk type passed")
 	}
 	if args[len(args)-1] != "http://127.0.0.1:8765/" {
 		t.Errorf("URL must be the last argument: %v", args)
@@ -239,8 +239,13 @@ func TestOpenBrowserKioskArgsEdge(t *testing.T) {
 	if err := openBrowser(path, "http://127.0.0.1:8765/", t.TempDir(), true); err != nil {
 		t.Fatal(err)
 	}
-	if args := waitArgs(t, af); !has(args, "--edge-kiosk-type=fullscreen") {
-		t.Fatalf("edge kiosk type missing: %v", args)
+	args := waitArgs(t, af)
+	if !has(args, "--kiosk") {
+		t.Fatalf("--kiosk missing: %v", args)
+	}
+	// Edge's own kiosk type is InPrivate, which ignores the pre-allowed camera and shows a prompt.
+	if has(args, "--edge-kiosk-type=fullscreen") {
+		t.Fatalf("InPrivate Edge kiosk type passed: %v", args)
 	}
 }
 
